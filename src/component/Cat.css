@@ -92,6 +92,7 @@ body {
   color: white;
   font-family: "Noto Sans KR", sans-serif;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* Safari 4.0 - 8.0 */
