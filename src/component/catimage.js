@@ -37,7 +37,7 @@ const Catimage = () => {
         img: e.url,
       };
     });
-    console.log(result);
+
     getImage(result);
   };
 
