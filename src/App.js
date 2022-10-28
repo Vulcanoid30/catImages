@@ -1,10 +1,11 @@
 import "./App.css";
 import Cat from "./component/cat";
+import Catimage from "./component/catimage";
 
 function App() {
   return (
     <div>
-      <Cat />
+      <Catimage />
     </div>
   );
 }
