@@ -22,18 +22,19 @@ const Catimage = () => {
     };
     Breeds();
   }, []);
-  const handleChange = (e) => {
-    breed(e.target.value);
-  };
+  // const handleChange = (e) => {
+  //   breed(e.target.value);
+  // };
 
   const getImages = async () => {
     const api = await fetch(
       "https://api.thecatapi.com/v1/images/search?breed_ids=",
-      handleChange
+      breed.value
     );
     const getApi = await api.json();
     const result = getApi.map((e) => {
       return {
+        id: e.id,
         img: e.url,
       };
     });
@@ -43,12 +44,17 @@ const Catimage = () => {
 
   return (
     <div>
-      <Select onChange={getImages} options={breed} />
+      <Select
+        onChange={getImages}
+        key={breed.value}
+        value={breed.value}
+        options={breed}
+      />
 
       <div className="container center">
         <div className="card">
           <hr />
-          <img key={image.img} alt="gambar" src={image[0].img} />
+          <img alt="gambar" key={image.id} src={image[0].img} />
         </div>
       </div>
     </div>
